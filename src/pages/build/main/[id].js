@@ -1,11 +1,28 @@
-import sdk from '@stackblitz/sdk';
-import { useState } from 'react';
-
-
+import {useEffect, useState} from 'react';
+import {createFiles} from "@/pages/build/main/service";
+import {embedProject} from "@stackblitz/sdk/types/lib";
+async function sendMessage() {
+    //1)TODO: send req to AI and get files
+    /// pay attention to file structure: [{name:n, content:n}, ...]
+    const files = [
+        {
+            name: "index2.js",
+            content: "console.log(fukumean)"
+        }
+    ]
+    //2) create/delete files
+    createFiles(files);
+}
 
 export default function main() {
+    //chat UI state
     const [chat, setChat] = useState([]);
     const [currentChatMessage, setCurrentChatMessage] = useState('');
+
+    useEffect(() => {
+        embedProject();
+    }, [])
+
 
     return (
         <div className="flex h-screen">
@@ -34,6 +51,7 @@ export default function main() {
                         <button type="button" className="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600"
                             onClick={
                                 () => {
+                                    sendMessage();
                                     setChat([...chat, currentChatMessage]);
                                     setCurrentChatMessage('');
                                 }
@@ -48,12 +66,8 @@ export default function main() {
 
             </div>
 
-            <div className="w-2/3 bg-gray-200 h-screen">
-                <iframe
-                    src="https://stackblitz.com/edit/stackblitz-starters-dxkdwb?file=src%2FApp.tsx"
-                    style={{ width: '100%', height: '100%', border: '0' }}
-                    title="Embedded StackBlitz"
-                ></iframe>
+            <div className="w-2/3 bg-gray-200 h-screen" id="embed">
+            {/*  Embeded stackblitz project is here.. */}
             </div>
         </div>
     );
