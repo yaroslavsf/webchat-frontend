@@ -1,6 +1,12 @@
 ﻿## 📝Table of Contents
+- [TODO](#todo)
 - [Getting started](#getting_started)
 - [Stackblitz](#stackblitz)
+
+## 🧠TODO <a name = "todo"></a>
+- Make initial template according to user preferences
+- Messaging in chat(UI)
+- AI part(format of request/response, error handling)
 
 ## 🏁Getting Started <a name = "getting_started"></a>
 First, run the development server:
