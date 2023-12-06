@@ -11,7 +11,7 @@
 ## 🏁Getting Started <a name = "getting_started"></a>
 First, install packages:
 ```bash
-npm run dev
+npm i
 ```
 run the development server:
 ```bash
