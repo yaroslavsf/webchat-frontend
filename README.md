@@ -9,7 +9,11 @@
 - AI part(format of request/response, error handling)
 
 ## 🏁Getting Started <a name = "getting_started"></a>
-First, run the development server:
+First, install packages:
+```bash
+npm run dev
+```
+run the development server:
 ```bash
 npm run dev
 ```
