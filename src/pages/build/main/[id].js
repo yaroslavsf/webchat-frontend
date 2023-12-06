@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
-import {createFiles} from "@/pages/build/main/service";
-import {embedProject} from "@stackblitz/sdk/types/lib";
+import {createFiles, embedProject} from "./service";
+
+
 async function sendMessage() {
     //1)TODO: send req to AI and get files
     /// pay attention to file structure: [{name:n, content:n}, ...]
