@@ -18,6 +18,7 @@ export async function createFiles(files) {
             create: {
                 [dynamicKey]  : `${file.content}`
             },
+            destroy: []
         });
     }
 }
