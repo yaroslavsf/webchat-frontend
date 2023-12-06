@@ -7,6 +7,8 @@
 - Make initial template according to user preferences
 - Messaging in chat(UI)
 - AI part(format of request/response, error handling)
+  - env is not defined
+  - request is mocked
 
 ## 🏁Getting Started <a name = "getting_started"></a>
 First, install packages:
